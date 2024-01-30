@@ -44,18 +44,15 @@ screen.key(['escape', 'q', 'C-c'], function (ch, key) {
 const getSystemInfo = async () => {
   const memoryUsage = process.memoryUsage();
   const memoryUsedInMB =
-    Math.round((memoryUsage.rss / 1024 / 1024) * 100) / 100; // Convert to MB
+    Math.round((memoryUsage.rss / 1024 / 1024) * 100) / 100;
 
-  // Get CPU information
-  const cpuInfo = os.cpus()[0]; // Get information about the first CPU core
+  const cpuInfo = os.cpus()[0];
   const cpuModel = cpuInfo.model;
 
   let wifiNameData = 'Wi-Fi is turned off';
   try {
     wifiNameData = await wifiName();
-  } catch (error) {
-    // Do nothing, keep the default error message
-  }
+  } catch (error) {}
 
   const baseboardData = await si.baseboard();
 
@@ -84,13 +81,14 @@ const checkInternet = async () => {
     statusBox.content = `Wi-Fi Status: Offline\n\nMemory Used: ${memoryUsedInMB} MB\nDevice Name: ${os.hostname()}\nCPU Model: ${cpuModel}`;
     screen.render();
 
-    // Send notification when Wi-Fi is disconnected
     notifyNoInternet();
   }
 };
 
 const notifyNoInternet = () => {
-  notifier.notify(NOTIFICATION_SETTINGS);
+  notifier.notify(
+    Object.assign(NOTIFICATION_SETTINGS, { appID: 'wifi_notificator' })
+  );
 };
 
 const prompt = blessed.prompt({
@@ -102,7 +100,7 @@ const prompt = blessed.prompt({
   border: {
     type: 'line',
   },
-  label: 'Enter interval time in seconds',
+  label: 'Enter Number (in seconds)',
   tags: true,
   keys: true,
   mouse: true,

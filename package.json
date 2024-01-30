@@ -17,7 +17,15 @@
     "url": "https://github.com/Wakype/Wi-Fi-Notifinator/issues"
   },
   "homepage": "https://github.com/Wakype/Wi-Fi-Notifinator#readme",
-  "keywords": ["wifi", "notificator", "notifier", "notification", "connection", "wifi checker", "ping"],
+  "keywords": [
+    "wifi",
+    "notificator",
+    "notifier",
+    "notification",
+    "connection",
+    "wifi checker",
+    "ping"
+  ],
   "author": "Wakype",
   "license": "ISC",
   "dependencies": {
@@ -31,6 +39,7 @@
     "systeminformation": "^5.21.24",
     "wifi-name": "^3.1.1",
     "wifi-notificator": "^1.0.0",
+    "win-wifi-name": "^1.0.0",
     "winston": "^3.11.0"
   }
 }
