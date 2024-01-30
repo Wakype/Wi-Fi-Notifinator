@@ -86,9 +86,12 @@ const checkInternet = async () => {
 };
 
 const notifyNoInternet = () => {
-  notifier.notify(
-    Object.assign(NOTIFICATION_SETTINGS, { appID: 'wifi_notificator' })
-  );
+  notifier.notify({
+    title: 'No Internet Connection',
+    message: 'Your internet connection is not available.',
+    timeout: 5,
+    appID: 'wifi_notificator',
+  });
 };
 
 const prompt = blessed.prompt({
