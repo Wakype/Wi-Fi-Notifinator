@@ -1,6 +1,6 @@
 {
   "name": "wifi-notificator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "🛜📶 Wi-Fi Notificator is a lightweight tool that continuously monitors your Wi-Fi network, along with other features such as monitoring the amount of memory used, the CPU utilized, the Wi-Fi name, and so on. It is a tool that runs in the background.",
   "main": "src/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "url": "https://github.com/Wakype/Wi-Fi-Notifinator/issues"
   },
   "homepage": "https://github.com/Wakype/Wi-Fi-Notifinator#readme",
-  "keywords": [],
+  "keywords": ["wifi", "notificator", "notifier", "notification", "connection", "wifi checker", "ping"],
   "author": "Wakype",
   "license": "ISC",
   "dependencies": {
@@ -30,6 +30,7 @@
     "public-ip": "^6.0.1",
     "systeminformation": "^5.21.24",
     "wifi-name": "^3.1.1",
+    "wifi-notificator": "^1.0.0",
     "winston": "^3.11.0"
   }
 }
